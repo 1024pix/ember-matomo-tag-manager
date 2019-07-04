@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-matomo-tag-manager",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon",
@@ -8,8 +8,8 @@
     "matomo tag manager",
     "analytics"
   ],
-  "repository" : {
-    "type" : "git",
+  "repository": {
+    "type": "git",
     "url": "ssh://git@github.com:1024pix/ember-cli-matomo-tag-manager.git"
   },
   "license": "MIT",
