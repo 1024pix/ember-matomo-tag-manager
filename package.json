@@ -3,11 +3,20 @@
   "version": "1.0.1",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "matomo",
+    "matomo tag manager",
+    "analytics"
   ],
-  "repository": "",
+  "repository" : {
+    "type" : "git",
+    "url": "ssh://git@github.com:1024pix/ember-cli-matomo-tag-manager.git"
+  },
   "license": "MIT",
-  "author": "",
+  "author": "Pix",
+  "maintainers": [
+    "Jérémy Buger (https://github.com/jbuget)"
+  ],
   "directories": {
     "doc": "doc",
     "test": "tests"
