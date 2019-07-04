@@ -59,6 +59,14 @@ module.exports = function(environment) {
 
 And, _voilà_!
 
+Configuration
+------------------------------------------------------------------------------
+
+| Param     | Type    | Required | Usage                    | Default value |
+|-----------|---------|----------|--------------------------|---------------|
+| url       | string  | yes      | Matomo TMS container URL | null          |
+| debug     | boolean | no       | Enable Matomo debug logs | false         |
+
 Example
 ------------------------------------------------------------------------------
 
