@@ -1,14 +1,14 @@
 <nav>
   <ul>
-    <li>{{link-to "page-1" "page-1"}}</li>
-    <li>{{link-to "page-2" "page-2"}}</li>
-    <li>{{link-to "page-3" "page-3"}}</li>
+    <li><LinkTo @route="page-1">page-1</LinkTo></li>
+    <li><LinkTo @route="page-2">page-2</LinkTo></li>
+    <li><LinkTo @route="page-3">page-3</LinkTo></li>
   </ul>
 </nav>
 
 
-<button class="my-button">Hit me!</button>
-<button class="my-button">Clic moi !</button>
+<button class="my-button" type="button">Hit me!</button>
+<button class="my-button" type="button">Clic moi !</button>
 
 {{outlet}}
 
