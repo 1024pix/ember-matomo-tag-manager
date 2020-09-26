@@ -80,6 +80,10 @@ Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
+Releasing
+------------------------------------------------------------------------------
+
+Execute script `./scripts/publish.sh [X.Y.Z]`.
 
 License
 ------------------------------------------------------------------------------
