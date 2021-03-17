@@ -10,22 +10,14 @@ module.exports = {
       const matomoUrl = config.matomo.url;
       const debugMode = config.matomo.debug ? config.matomo.debug : false;
 
-      let startEventScript = `<!-- Matomo Tag Manager -->
-        <script type="text/javascript">
-        var _mtm = _mtm || [];`;
+      let loadMatomoScript = `<!-- Matomo Tag Manager -->
+      <script type="text/javascript" async defer src="${matomoUrl}"></script>`;
 
-      startEventScript += debugMode ? `\n _mtm.push(['enableDebugMode']);` : '';
+      let startEventScript = `
+        <script id="start-matomo-event" type="text/javascript" src="/ember-cli-matomo-tag-manager/start-matomo-event.js" data-debug-mode="${debugMode}"></script>
+        <!-- End Matomo Tag Manager -->`;
 
-      startEventScript += `
-        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-        </script>`;
-
-      let loadMatomoScript = `
-        <script type="text/javascript" async defer src="${matomoUrl}"></script>
-        <!-- End Matomo Tag Manager -->
-        `;
-
-      return startEventScript + loadMatomoScript;
+      return loadMatomoScript + startEventScript;
     }
   }
 };
