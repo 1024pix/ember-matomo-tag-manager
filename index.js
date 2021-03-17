@@ -11,24 +11,22 @@ module.exports = {
         const matomoUrl = config.matomo.url;
         const debugMode = config.matomo.debug ? config.matomo.debug : false;
 
-        let script = `
-<!-- Matomo Tag Manager -->
-<script type="text/javascript">
-var _mtm = _mtm || [];`;
+        let startEventScript = `<!-- Matomo Tag Manager -->
+          <script type="text/javascript">
+          var _mtm = _mtm || [];`;
 
-        if (debugMode) {
-          script += `
-_mtm.push(['enableDebugMode']);`;
-        }
+        startEventScript += debugMode ? `\n _mtm.push(['enableDebugMode']);` : '';
 
-        script += `
-_mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-g.type='text/javascript'; g.async=true; g.defer=true; g.src='${matomoUrl}'; s.parentNode.insertBefore(g,s);
-</script>
-<!-- End Matomo Tag Manager -->
-`;
-        return script;
+        startEventScript += `
+          _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+          </script>`;
+
+        let loadMatomoScript = `
+          <script type="text/javascript" async defer src="${matomoUrl}"></script>
+          <!-- End Matomo Tag Manager -->
+          `;
+
+        return startEventScript + loadMatomoScript;
       }
     }
   }
