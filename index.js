@@ -10,10 +10,10 @@ module.exports = {
       const matomoUrl = config.matomo.url;
       const debugMode = config.matomo.debug ? config.matomo.debug : false;
 
-      let loadMatomoScript = `<!-- Matomo Tag Manager -->
+      const loadMatomoScript = `<!-- Matomo Tag Manager -->
       <script type="text/javascript" async defer src="${matomoUrl}"></script>`;
 
-      let startEventScript = `
+      const startEventScript = `
         <script id="start-matomo-event" type="text/javascript" src="/ember-cli-matomo-tag-manager/start-matomo-event.js" data-debug-mode="${debugMode}"></script>
         <!-- End Matomo Tag Manager -->`;
 
