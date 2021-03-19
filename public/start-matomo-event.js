@@ -1,8 +1,6 @@
 var _mtm = _mtm || [];
 
-const isDebugMode = document.getElementById('start-matomo-event').getAttribute('data-debug-mode');
-
-if (isDebugMode) {
+if (document.querySelector('script[data-matomo-debug-mode="true"]')) {
   _mtm.push(['enableDebugMode']);
 } 
 
