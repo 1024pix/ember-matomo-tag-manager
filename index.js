@@ -14,7 +14,7 @@ module.exports = {
       <script type="text/javascript" async defer src="${matomoUrl}"></script>`;
 
       const startEventScript = `
-        <script id="start-matomo-event" type="text/javascript" src="/ember-cli-matomo-tag-manager/start-matomo-event.js" data-debug-mode="${debugMode}"></script>
+        <script type="text/javascript" src="/ember-cli-matomo-tag-manager/start-matomo-event.js" data-matomo-debug-mode="${debugMode}"></script>
         <!-- End Matomo Tag Manager -->`;
 
       return loadMatomoScript + startEventScript;
