@@ -27,8 +27,10 @@ module('matomo-tag-manager adapter', function (hooks) {
 
     this.adapter.identify({ userId: 123 });
 
-    assert.ok(stub
-      .calledWith(['setUserId', 123]), 'it sends the correct arguments');
+    assert.ok(
+      stub.calledWith(['setUserId', 123]),
+      'it sends the correct arguments',
+    );
   });
 
   test('#trackEvent calls MatomoTagManager with the right arguments', function (assert) {
@@ -44,11 +46,8 @@ module('matomo-tag-manager adapter', function (hooks) {
     });
 
     assert.ok(
-      stub
-      .calledWith(
-        ['trackEvent', 'button', 'click', 'nav buttons', 4]
-      ),
-      'it sends the correct arguments'
+      stub.calledWith(['trackEvent', 'button', 'click', 'nav buttons', 4]),
+      'it sends the correct arguments',
     );
   });
 
@@ -63,19 +62,13 @@ module('matomo-tag-manager adapter', function (hooks) {
     });
 
     assert.ok(
-      stub
-      .calledWith(
-        ['setCustomUrl', '/my-overridden-page?id=1']
-      ),
-      'it sends the correct arguments'
+      stub.calledWith(['setCustomUrl', '/my-overridden-page?id=1']),
+      'it sends the correct arguments',
     );
 
     assert.ok(
-      stub
-      .calledWith(
-        ['trackPageView', 'my overridden page']
-      ),
-      'it sends the correct arguments'
+      stub.calledWith(['trackPageView', 'my overridden page']),
+      'it sends the correct arguments',
     );
   });
 });

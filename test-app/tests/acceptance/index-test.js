@@ -9,7 +9,9 @@ module('Acceptance | lifecycle', function (hooks) {
     await visit('/');
     assert.strictEqual(currentURL(), '/');
 
-    const matomoScript = document.querySelector('script[id="matomo-tag-manager"]');
+    const matomoScript = document.querySelector(
+      'script[id="matomo-tag-manager"]',
+    );
     assert.ok(matomoScript);
   });
 });

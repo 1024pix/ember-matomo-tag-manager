@@ -22,7 +22,7 @@ module.exports = function (environment) {
     metrics: {
       matomoUrl: 'matomo.my.example.net',
       containerId: 'abcd123',
-    }
+    },
   };
 
   if (environment === 'development') {
@@ -31,7 +31,6 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-
   }
 
   if (environment === 'test') {
