@@ -65,6 +65,8 @@
     "version": 2,
     "type": "addon",
     "main": "addon-main.cjs",
-    "app-js": {}
+    "app-js": {
+      "./services/metrics.js": "./dist/_app_/services/metrics.js"
+    }
   }
 }
