@@ -7,8 +7,6 @@ export default class Metrics extends Service {
 
   context = {};
 
-  enabled = typeof navigator !== 'undefined' && navigator.doNotTrack !== '1';
-
   appEnvironment = null;
 
   constructor() {
@@ -18,7 +16,7 @@ export default class Metrics extends Service {
 
     const config = owner.factoryFor('config:environment').class;
     const { metrics = [] } = config;
-    this.enabled = this.enabled && config.metrics.enabled === true;
+    this.enabled = config.metrics.enabled === true;
     const { environment = 'development' } = config;
 
     this._options = { metrics, environment };
