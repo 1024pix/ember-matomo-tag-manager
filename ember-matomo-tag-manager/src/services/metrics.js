@@ -32,10 +32,6 @@ export default class Metrics extends Service {
     this.invoke('identify', ...arguments);
   }
 
-  alias() {
-    this.invoke('alias', ...arguments);
-  }
-
   trackEvent() {
     this.invoke('trackEvent', ...arguments);
   }
