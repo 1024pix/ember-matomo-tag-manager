@@ -21,8 +21,7 @@ module.exports = function (environment) {
 
     metrics: {
       enabled: true,
-      matomoUrl: 'matomo.my.example.net',
-      containerId: 'abcd123',
+      matomoUrl: 'https://matomo.my.example.net/js/container_testID.js',
     },
   };
 

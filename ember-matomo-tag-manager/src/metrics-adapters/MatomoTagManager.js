@@ -13,22 +13,22 @@ export default class MatomoTagManager {
   }
 
   install() {
-    const { matomoUrl, containerId } = this.config;
+    const { matomoUrl } = this.config;
 
     assert(
-      `[ember-matomo-tag-manager] You must pass a \`matomoUrl\` and a \`containerId\` to the ${this.toString()} adapter`,
-      matomoUrl && containerId,
+      `[ember-matomo-tag-manager] You must pass a \`matomoUrl\` to the ${this.toString()} adapter`,
+      matomoUrl,
     );
 
-    this._injectScript(matomoUrl, containerId);
+    this._injectScript(matomoUrl);
   }
 
   // prettier-ignore
-  _injectScript(matomoUrl, containerId) {
+  _injectScript(matomoUrl) {
     window._mtm = window._mtm || [];
     window._mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src=`https://${matomoUrl}/js/container_${containerId}.js`; s.parentNode.insertBefore(g,s);
+    g.type='text/javascript'; g.async=true; g.src=`${matomoUrl}`; s.parentNode.insertBefore(g,s);
     g.id='matomo-tag-manager'
   }
 
