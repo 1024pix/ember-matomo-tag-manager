@@ -28,12 +28,15 @@ export default class Metrics extends Service {
     this._adapter.install();
   }
 
+  // eslint-disable-next-line ember/classic-decorator-hooks
+  initialize() {}
+
   identify() {
     this.invoke('identify', ...arguments);
   }
 
-  trackEvent() {
-    this.invoke('trackEvent', ...arguments);
+  add() {
+    this.invoke('add', ...arguments);
   }
 
   trackPage() {

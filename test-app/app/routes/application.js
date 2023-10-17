@@ -5,6 +5,6 @@ export default class ApplicationRoute extends Route {
   @service metrics;
 
   beforeModel() {
-    this.metrics.trackPage({ page: this.url, title: this.routeName });
+    this.metrics.initialize();
   }
 }
