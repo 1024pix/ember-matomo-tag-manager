@@ -51,6 +51,9 @@ export default class Metrics extends Service {
   }
 
   willDestroy() {
+    if (!this.enabled) {
+      return;
+    }
     this._adapter.uninstall();
   }
 }
