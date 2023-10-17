@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 import sinon from 'sinon';
-import MatomoTagManager from 'ember-matomo-tag-manager/metrics-adapters/MatomoTagManager';
+import MatomoTagManager from '@1024pix/ember-matomo-tag-manager/metrics-adapters/MatomoTagManager';
 
 module('matomo-tag-manager adapter', function (hooks) {
   setupTest(hooks);
