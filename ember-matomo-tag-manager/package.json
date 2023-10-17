@@ -1,6 +1,6 @@
 {
   "name": "@1024pix/ember-matomo-tag-manager",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "The default blueprint for Embroider v2 addons.",
   "keywords": [
     "ember-addon"
