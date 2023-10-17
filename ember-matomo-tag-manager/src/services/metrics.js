@@ -20,8 +20,7 @@ export default class Metrics extends Service {
     const { environment = 'development' } = config;
 
     this._options = { metrics, environment };
-    this.appEnvironment = environment;
-    if (!this.enabled && this.appEnvironment !== 'test') {
+    if (!this.enabled) {
       return;
     }
     this._adapter = new MatomoTagManager(this._options.metrics);
