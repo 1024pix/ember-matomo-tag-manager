@@ -32,23 +32,18 @@ export default class MatomoTagManager {
     g.id='matomo-tag-manager'
   }
 
+  // eslint-disable-next-line no-unused-vars
   identify(options = {}) {
-    window._mtm.push(['setUserId', options.userId]);
+    throw new Error('Not implemented yet');
   }
 
-  trackEvent(options = {}) {
-    window._mtm.push([
-      'trackEvent',
-      options.category,
-      options.action,
-      options.name,
-      options.value,
-    ]);
+  add(options = {}) {
+    window._mtm.push(options);
   }
 
+  // eslint-disable-next-line no-unused-vars
   trackPage(options = {}) {
-    window._mtm.push(['setCustomUrl', options.page]);
-    window._mtm.push(['trackPageView', options.title]);
+    throw new Error('Not implemented yet');
   }
 
   uninstall() {

@@ -20,55 +20,35 @@ module('matomo-tag-manager adapter', function (hooks) {
     this.adapter.uninstall();
   });
 
-  test('#identify calls MatomoTagManager with the right arguments', function (assert) {
-    const stub = sinon.stub(window._mtm, 'push').callsFake(() => {
-      return true;
-    });
-
-    this.adapter.identify({ userId: 123 });
-
-    assert.ok(
-      stub.calledWith(['setUserId', 123]),
-      'it sends the correct arguments',
-    );
+  test('#identify throw not implement yet Error', function (assert) {
+    assert.throws(() => {
+      this.adapter.identify({ userId: 123 });
+    }, 'Not implemented yet');
   });
 
-  test('#trackEvent calls MatomoTagManager with the right arguments', function (assert) {
+  test('#add calls MatomoTagManager with the right arguments', function (assert) {
     const stub = sinon.stub(window._mtm, 'push').callsFake(() => {
       return true;
     });
 
-    this.adapter.trackEvent({
+    const options = {
       category: 'button',
       action: 'click',
       name: 'nav buttons',
       value: 4,
-    });
+    };
 
-    assert.ok(
-      stub.calledWith(['trackEvent', 'button', 'click', 'nav buttons', 4]),
-      'it sends the correct arguments',
-    );
+    this.adapter.add(options);
+
+    assert.ok(stub.calledWith(options), 'it sends the correct arguments');
   });
 
-  test('#trackPage calls MatomoTagManager with the right arguments', function (assert) {
-    const stub = sinon.stub(window._mtm, 'push').callsFake(() => {
-      return true;
-    });
-
-    this.adapter.trackPage({
-      page: '/my-overridden-page?id=1',
-      title: 'my overridden page',
-    });
-
-    assert.ok(
-      stub.calledWith(['setCustomUrl', '/my-overridden-page?id=1']),
-      'it sends the correct arguments',
-    );
-
-    assert.ok(
-      stub.calledWith(['trackPageView', 'my overridden page']),
-      'it sends the correct arguments',
-    );
+  test('#trackPage throw not implement yet Error', function (assert) {
+    assert.throws(() => {
+      this.adapter.trackPage({
+        page: '/my-overridden-page?id=1',
+        title: 'my overridden page',
+      });
+    }, 'Not implemented yet');
   });
 });
