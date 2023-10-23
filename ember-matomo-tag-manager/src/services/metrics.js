@@ -42,7 +42,7 @@ export default class Metrics extends Service {
     this.invoke('trackPage', ...arguments);
   }
 
-  invoke(methodName, ...options) {
+  invoke(methodName, options) {
     if (!this.enabled) {
       return;
     }
